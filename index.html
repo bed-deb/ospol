@@ -1,0 +1,163 @@
+Strona ospol detail
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSPOL Detail</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .orange {
+            color: #FF5F1F;
+        }
+        .left-container {
+            text-align: left;
+            max-width: 300px;
+            padding-left: 10px;
+        }
+        .small-heading {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .list-container {
+            text-align: left;
+        }
+        .list-item {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5px;
+        }
+        .list-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .list-content {
+            display: none;
+            padding: 10px;
+            font-weight: normal;
+        }
+        .separator {
+            height: 1px;
+            background-color: gray;
+            margin: 5px 0;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .social-link img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .social-link a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .social-link a:hover {
+            color: orange;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 250px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Siema, z tej strony <span class="orange">OSPOL Detail</span>👊.</h1>
+    
+    <div class="left-container">
+        <p class="small-heading">Co chcesz zrobić?</p>
+    
+        <div class="list-container">
+            <div class="list-item" onclick="toggleItem('oferta', this)">
+                <span>Jakie są oferty i jaka jest ich cena?</span> <span>▶</span>
+            </div>
+            <div id="oferta" class="list-content">
+                <p>1. Precyzyjne czyszczenie wnętrza - 50 zł</p>
+                <p>2. Szczegółowe mycie karoserii - 70 zł</p>
+                <p>3. Opcja duo - 100 zł</p>
+            </div>
+            <div class="separator"></div>
+
+            <div class="list-item" onclick="toggleItem('kontakt', this)">
+                <span>Jak się skontaktować?</span> <span>▶</span>
+            </div>
+            <div id="kontakt" class="list-content">
+                <p>Email (słaba aktywność na mailu): <span class="orange">ospoldetail7@gmail.com</span></p>
+                <div class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                    <a href="https://www.instagram.com/ospol_detail?igsh=NDhpeGdnaTUxMDE=" target="_blank">Instagram</a>
+                </div>
+                <div class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                    <a href="https://www.facebook.com/share/165Joe1iEd/?mibextid=wwXIfr" target="_blank">Facebook</a>
+                </div>
+            </div>
+            <div class="separator"></div>
+
+            <div class="list-item" onclick="toggleItem('lokalizacja', this)">
+                <span>Gdzie jesteśmy?</span> <span>▶</span>
+            </div>
+            <div id="lokalizacja" class="list-content">Adres uzyskacie tylko i wyłącznie po skontaktowaniu się na priv.</div>
+            <div class="separator"></div>
+
+            <div class="list-item" onclick="toggleItem('efekty', this)">
+                <span>Efekty</span> <span>▶</span>
+            </div>
+            <div id="efekty" class="list-content">
+                <div class="image-container">
+                    <img src="https://i.imgur.com/0IpqNTo.jpeg" alt="Auto przed i po">
+                    <img src="https://i.imgur.com/iyZgddY.jpg" alt="Wypolerowane auto">
+                    <img src="https://i.imgur.com/H3mwNRG.jpeg" alt="g">
+                </div>
+            </div>
+            <div class="separator"></div>  
+
+            <div class="list-item" onclick="toggleItem('onas', this)">
+                <span>O nas</span> <span>▶</span>
+            </div>
+            <div id="onas" class="list-content">
+                <p>OSPOL Detail to ekipa zajmująca się profesjonalnym detailingiem aut. Dbamy o czystość i wygląd twojego samochodu jak o własny.</p>
+            </div>
+            <div class="separator"></div>  
+        </div>
+    </div>
+
+    <script>
+        function toggleItem(id, element) {
+            var content = document.getElementById(id);
+            var icon = element.querySelector("span:last-child");
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                icon.innerHTML = "✖";
+            } else {
+                content.style.display = "none";
+                icon.innerHTML = "▶";
+            }
+        }
+    </script>
+
+</body>
+</html>
